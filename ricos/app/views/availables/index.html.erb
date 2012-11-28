@@ -1,0 +1,26 @@
+<h1>Mesas Disponibles</h1>
+
+<table>
+  <tr>
+    <th>Mesa 01 <br />27/11/2012</th>
+  </tr>
+
+<% @availables.each do |available| %>
+  <tr>
+    <td>
+      <%= form_for available do |f| %>
+       <% if available.available == "1" %>
+       <%= f.submit available.begin_at.strftime("%H:%M:%S"), :class => "btn btn-danger" %>
+       <% else %>
+       <%= f.submit available.begin_at.strftime("%H:%M:%S"), :class => "btn btn-success" %>
+       <% end %>
+      <% end %>
+     <br>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Available', new_available_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @available.name %>
+</p>
+
+<p>
+  <b>Begin at:</b>
+  <%= @available.begin_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_available_path(@available) %> |
+<%= link_to 'Back', availables_path %>
